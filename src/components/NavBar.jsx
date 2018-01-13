@@ -6,7 +6,7 @@ const Nav = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: 20%;
+    width: 21%;
     height: 100%;
     background-color: #8DB4E2; 
     position: fixed;
@@ -64,6 +64,7 @@ class NavBar extends Component {
                         <List>Services</List>
                         <List>About</List>
                         <List>Contact</List>
+                        <List>Hours</List>
                     </Ulist>
 
                 </MenuItems>
