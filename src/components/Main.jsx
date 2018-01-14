@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import NavBar from './NavBar'
 import Footer from './Footer'
 import Services from './Services'
+import Modal from 'react-modal'
+import AppointmentForm from './AppointmentForm'
 
 const Container = styled.div`
     display: flex;
@@ -29,16 +31,40 @@ const Parallax = styled.div`
     background-size: cover;
 `   
 
-const Appointment = styled.div`
+const Appointment = styled.button`
     margin-right: 40px;
     background-color: #8DB4E2;
-    padding: 15px;
+    padding: 25px;
     color: white;
     border-radius: 25px;
+    font-size: 24px;
+    &&:hover {
+        cursor: pointer;
+        font-size: 25px;
+        padding:26px;
+    }
 `
 
 
 class Main extends Component {
+
+    state = {
+        isOpen: false,
+    }
+
+
+    openModal = () => {
+        this.setState({
+            isOpen: true,
+        })
+    }
+
+    closeModal = () => {
+        this.setState({
+            isOpen: false
+        })
+    }
+
     render() {
         return (
             <Container>
@@ -48,7 +74,11 @@ class Main extends Component {
                 <div>
                     <Parallax>
                         
-                        <Appointment href="">MAKE AN APPOINTMENT</Appointment>
+                        <Appointment onClick={this.openModal}>MAKE AN APPOINTMENT</Appointment>
+
+                        {
+                            this.state.isOpen ? <AppointmentForm isOpen={this.state.isOpen} openModal={this.openModal} closeModal={this.closeModal}/> : null
+                        }
                         
                     </Parallax>
 
