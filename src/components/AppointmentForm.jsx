@@ -33,6 +33,16 @@ const InputField = styled.input`
     box-sizing: border-box;
 `
 
+const Select = styled.select`
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+`
+
 class AppointmentForm extends Component {
     render() {
         return (
@@ -47,15 +57,40 @@ class AppointmentForm extends Component {
                 >
                     <h1>Make an appointment!</h1>
                     <form action="">
+
                         <label htmlFor="name">Name:</label>
                         <br />
-                        <InputField type="text" name="name" placeholder="Your name"/><br />
+                        <InputField type="text" name="name" placeholder="Your name" /><br />
+
+                        <label htmlFor="pet">Pet's Name:</label>
+                        <br />
+                        <InputField type="text" name="pet" placeholder="Pet's name" /><br />
+
+
+                        <label htmlFor="patient">Patient type:</label>
+                        <br/>
+                        <Select id="patient" name="patient">
+                            <option value="new">New Patient</option>
+                            <option value="current">Current Patient</option>
+                        </Select>
+
                         <label htmlFor="phone">Phone:</label>
                         <br />
                         <InputField type="text" name="phone" placeholder="Your phone number" /><br />
                         <label htmlFor="mail">E-Mail:</label>
                         <br />
-                        <InputField type="text" name="mail" placeholder="Your email"/><br />
+
+                        <InputField type="text" name="mail" placeholder="Your email" /><br />
+                        <label htmlFor="doctor">Choose your Doctor:</label>
+                        <br />
+                        <Select id="doctor" name="doctor">
+                            <option value="alvey">Dr. Alvey</option>
+                            <option value="gilvarry">Dr. Gilvarry</option>
+                        </Select>
+
+                        <label htmlFor="date">Date Preferred</label>
+
+                        <br/>
                         <label htmlFor="comment">Comment</label> <br />
                         <textarea id="comment" name="comment" cols='40' rows='5' /><br />
                     </form>
