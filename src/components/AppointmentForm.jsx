@@ -42,6 +42,9 @@ const Select = styled.select`
     border-radius: 4px;
     box-sizing: border-box;
 `
+const Header = styled.h1`
+    
+`
 
 class AppointmentForm extends Component {
     render() {

@@ -3,3 +3,12 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+h1, li, p, button {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  border-bottom: thin solid;
+  font-size: 50px;
+}

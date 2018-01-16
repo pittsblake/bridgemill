@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import AllServices from './AllServices'
 
 const Container = styled.div`
     display: flex;
@@ -8,7 +9,7 @@ const Container = styled.div`
     align-items: center;
     float: right;
     width: 79%;
-    height: 500px;
+    height: 550px;
 `
 
 const Body = styled.div`
@@ -42,29 +43,52 @@ const SeeMore = styled.div`
 `
 
 class Services extends Component {
+
+    state = {
+        showMore: false,
+        hideButton: false,
+    }
+
+    handleClick = () => {
+        this.setState({
+            showMore: !this.state.showMore,
+            hideButton: !this.state.hideButton
+        })
+    }
+
     render() {
         return (
-            <Container>
-                <h1>Services</h1>
-                <Body>
-                    <CenterServices>
-                        <Img src="https://i.imgur.com/wEnCfHw.png" alt="" />
-                        <p>Dentistry</p>
-                    </CenterServices>
-                    <CenterServices>
-                        <Img src="https://i.imgur.com/zwjUIvu.png" alt="" />
-                        <p>Boarding</p>
-                    </CenterServices>
-                    <CenterServices>
-                        <Img src="https://i.imgur.com/xgwZwbN.png" alt="" />
-                        <p>Surgery</p>
-                    </CenterServices>
+            <div>
+                <Container>
+                    <h1>Services</h1>
+                    <Body>
+                        <CenterServices>
+                            <Img src="https://i.imgur.com/wEnCfHw.png" alt="" />
+                            <p>Dentistry</p>
+                        </CenterServices>
+                        <CenterServices>
+                            <Img src="https://i.imgur.com/zwjUIvu.png" alt="" />
+                            <p>Boarding</p>
+                        </CenterServices>
+                        <CenterServices>
+                            <Img src="https://i.imgur.com/xgwZwbN.png" alt="" />
+                            <p>Surgery</p>
+                        </CenterServices>
 
-                </Body>
-                <SeeMore>
-                    <a href="">See more</a>
-                </SeeMore>
-            </Container>
+                    </Body>
+                    {
+                        this.state.hideButton ? <button onClick={this.handleClick}>Hide</button> :
+                            <SeeMore>
+                                <button onClick={this.handleClick}>See more</button>
+
+                            </SeeMore>
+                    }
+
+                </Container>
+                {
+                    this.state.showMore ? <AllServices /> : null
+                }
+            </div>
         );
     }
 }

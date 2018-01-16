@@ -5,6 +5,9 @@ import Footer from './Footer'
 import Services from './Services'
 import Modal from 'react-modal'
 import AppointmentForm from './AppointmentForm'
+import Doctors from './Doctors'
+import AboutUs from './AboutUs'
+
 
 const Container = styled.div`
     display: flex;
@@ -83,6 +86,8 @@ class Main extends Component {
                     </Parallax>
 
                     <Services />
+                    <AboutUs />
+                    <Doctors />
 
                     <Footer />
                 </div>

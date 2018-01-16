@@ -48,7 +48,7 @@ const List = styled.li`
     font-size: 20px;
     &&:hover {
         background-color: black;
-        font-size: 22px;
+
     }
 `
 
