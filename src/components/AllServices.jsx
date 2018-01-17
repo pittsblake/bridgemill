@@ -8,7 +8,7 @@ const Container = styled.div`
     align-items: center;
     float: right;
     width: 79%;
-    height: 270px;
+    height: 350px;
 `
 
 class AllServices extends Component {

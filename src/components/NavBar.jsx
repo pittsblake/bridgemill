@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import styled from 'styled-components';
+import scrollToComponent from 'react-scroll-to-component';
+import Services from './Services'
 
 const Nav = styled.div`
     display: flex;
@@ -8,13 +10,16 @@ const Nav = styled.div`
     justify-content: flex-start;
     width: 21%;
     height: 100%;
-    background-color: #8DB4E2; 
+    background-color: #49a0ae; 
     position: fixed;
 `
 const Logo = styled.img`
     width: 82%;
     height: 15%;
     margin-top: 30px;
+    &&:hover {
+        cursor: pointer;
+    }
     
 `
 
@@ -48,25 +53,29 @@ const List = styled.li`
     font-size: 20px;
     &&:hover {
         background-color: black;
-
+        cursor: pointer;
     }
 `
 
+
+
 class NavBar extends Component {
+
     render() {
         return (
             <Nav>
 
-                <Logo src="http://bridgemillmo.evetsites.net/sites/site-5731/images/logo.png" alt="BridgeMill Animal Hospital" />
+                <Logo className='top' src="http://bridgemillmo.evetsites.net/sites/site-5731/images/logo.png" alt="BridgeMill Animal Hospital" />
 
                 <MenuItems>
                     <Ulist>
-                        <List>Services</List>
-                        <List>About</List>
-                        <List>Contact</List>
-                        <List>Hours</List>
+                        <List className="serviceButton">Services</List>
+                        <List className="aboutButton">About</List>
+                        <List className="staffButton">Staff</List>
+                        <List className="promotionButton">Promotions</List>
+                        <List className="footerButton">Contact</List>
+                        <List className="footerButton">Hours</List>
                     </Ulist>
-
                 </MenuItems>
             </Nav>
         );

@@ -8,7 +8,7 @@ const Container = styled.div`
     align-items: center;
     float: right;
     width: 79%;
-    height: 500px;
+    height: 550px;
 `
 
 const Body = styled.div`
@@ -32,20 +32,31 @@ const SeeMore = styled.div`
     background-color: lightcyan;
     display: flex;
     justify-content: center;
+    
+`
+
+const Button = styled.button`
+    border: none;
+    background-color: lightcyan;
+    border-bottom: thin solid;
+    &&:hover {
+        cursor: pointer;
+        font-size: 14px;
+    }
 `
 
 
 class Doctors extends Component {
     render() {
         return (
-            <Container>
+            <Container className='doctors'>
                 <h1>Our Doctors</h1>
                 <Body>
                     <Img src="https://i.imgur.com/GNqlJCu.jpg"></Img>
                     <Img src="https://i.imgur.com/hIW2BPx.jpg"></Img>
                 </Body>
                 <SeeMore>
-                    <button>See the rest of our staff</button>
+                    <Button>See the rest of our staff</Button>
                 </SeeMore>
             </Container>
 

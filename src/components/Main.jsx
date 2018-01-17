@@ -4,9 +4,10 @@ import NavBar from './NavBar'
 import Footer from './Footer'
 import Services from './Services'
 import Modal from 'react-modal'
-import AppointmentForm from './AppointmentForm'
+//import AppointmentForm from './AppointmentForm'
 import Doctors from './Doctors'
 import AboutUs from './AboutUs'
+import Promotions from './Promotions'
 
 
 const Container = styled.div`
@@ -24,28 +25,37 @@ const Column = styled.div`
 const Parallax = styled.div`
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-start;
     background-image: url("https://i.imgur.com/hP5vKOX.jpg"); 
-    /* width: 80%;  */
     min-height: 700px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-`   
+`
 
-const Appointment = styled.button`
-    margin-right: 40px;
-    background-color: #8DB4E2;
+const Appointment = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    background-color: #77f9f4;
     padding: 25px;
     color: white;
-    border-radius: 25px;
+    max-height: 200px;
+    border-radius: 15px 0px 0px 15px;
     font-size: 24px;
-    &&:hover {
-        cursor: pointer;
-        font-size: 25px;
-        padding:26px;
-    }
+`
+
+const CallUs = styled.div`
+    padding-bottom: 30px;
+    color: black;
+    font-family: 'Playfair Display', serif;
+`
+
+const Phone = styled.div`
+    font-size: 32px;
+    color: black;
 `
 
 
@@ -70,25 +80,32 @@ class Main extends Component {
 
     render() {
         return (
-            <Container>
+            <Container className="home">
 
                 <NavBar />
 
                 <div>
                     <Parallax>
-                        
-                        <Appointment onClick={this.openModal}>MAKE AN APPOINTMENT</Appointment>
 
-                        {
+                        <Appointment>
+                            <CallUs>
+                                Call Us To Schedule An Appointment:
+                            </CallUs>
+                            <Phone>
+                                770.479.2200
+                            </Phone>
+                        </Appointment>
+
+                        {/* {
                             this.state.isOpen ? <AppointmentForm isOpen={this.state.isOpen} openModal={this.openModal} closeModal={this.closeModal}/> : null
-                        }
-                        
+                        } */}
+
                     </Parallax>
 
                     <Services />
                     <AboutUs />
                     <Doctors />
-
+                    <Promotions />
                     <Footer />
                 </div>
             </Container>

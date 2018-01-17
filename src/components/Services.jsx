@@ -10,6 +10,8 @@ const Container = styled.div`
     float: right;
     width: 79%;
     height: 550px;
+
+    
 `
 
 const Body = styled.div`
@@ -42,6 +44,16 @@ const SeeMore = styled.div`
     justify-content: center;
 `
 
+const Button = styled.button`
+    border: none;
+    background-color: lightcyan;
+    border-bottom: thin solid;
+    &&:hover {
+        cursor: pointer;
+        font-size: 14px;
+    }
+`
+
 class Services extends Component {
 
     state = {
@@ -59,16 +71,16 @@ class Services extends Component {
     render() {
         return (
             <div>
-                <Container>
-                    <h1>Services</h1>
+                <Container className="services">
+                    <h1>Services</h1> <section className="Services" ref={(section) => { this.Services = section; }}></section>
                     <Body>
-                        <CenterServices>
-                            <Img src="https://i.imgur.com/wEnCfHw.png" alt="" />
-                            <p>Dentistry</p>
-                        </CenterServices>
                         <CenterServices>
                             <Img src="https://i.imgur.com/zwjUIvu.png" alt="" />
                             <p>Boarding</p>
+                        </CenterServices>
+                        <CenterServices>
+                            <Img src="https://i.imgur.com/wEnCfHw.png" alt="" />
+                            <p>Dentistry</p>
                         </CenterServices>
                         <CenterServices>
                             <Img src="https://i.imgur.com/xgwZwbN.png" alt="" />
@@ -77,9 +89,9 @@ class Services extends Component {
 
                     </Body>
                     {
-                        this.state.hideButton ? <button onClick={this.handleClick}>Hide</button> :
+                        this.state.hideButton ? <Button onClick={this.handleClick}>Hide</Button> :
                             <SeeMore>
-                                <button onClick={this.handleClick}>See more</button>
+                                <Button onClick={this.handleClick}>See more</Button>
 
                             </SeeMore>
                     }

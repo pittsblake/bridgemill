@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import styled from 'styled-components'
 
 const Container = styled.div`
-    margin-top: 15px;
+    background-color: lightcyan;
+    padding-top: 15px;
     display: flex;
     justify-content: space-between;
     float: right;
@@ -13,13 +14,15 @@ const Container = styled.div`
 const IconContainer = styled.div`
     display: flex;
     justify-content: space-around;
-    /* margin: 0px ; */
+    
 `
 
 const Icon = styled.h1`
     font-size: 52px;
     padding-right: 30px;
     margin: 10px 0px 0px 0px;
+    border-bottom: none;
+    background-color: lightcyan;
 `
 
 const Hours = styled.div`
@@ -27,15 +30,17 @@ const Hours = styled.div`
     flex-direction: column;
     align-items: flex-start;
     margin-right: 50px;
+    background-color: lightcyan;
 `
 const Address = styled.div`
     margin-left: 50px;
+    background-color: lightcyan;
 `
 
 class Footer extends Component {
     render() {
         return (
-            <Container>
+            <Container className='footer'>
                 <Address>
                     <p>
                         BridgeMill Animal Hospital
