@@ -45,11 +45,11 @@ class Footer extends Component {
                     <p>
                         BridgeMill Animal Hospital
                         <br/>
-                        770.479.2200
-                        <br/>
                         9560 Bells Ferry Road 
                         <br/>
                         Canton, GA 30114 
+                        <br/>
+                        770.479.2200
                     </p>
                 </Address>
                 <Hours>

@@ -14,8 +14,8 @@ const Nav = styled.div`
     position: fixed;
 `
 const Logo = styled.img`
-    width: 82%;
-    height: 15%;
+    width: 290px;
+    height: 100px;
     margin-top: 30px;
     &&:hover {
         cursor: pointer;
@@ -65,7 +65,7 @@ class NavBar extends Component {
         return (
             <Nav>
 
-                <Logo className='top' src="http://bridgemillmo.evetsites.net/sites/site-5731/images/logo.png" alt="BridgeMill Animal Hospital" />
+                <Logo className='top' src="../../logo.png" alt="BridgeMill Animal Hospital" />
 
                 <MenuItems>
                     <Ulist>
