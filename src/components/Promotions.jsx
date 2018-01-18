@@ -20,10 +20,13 @@ const Body = styled.div`
     background-color:  #ffe0e0;
     /* margin-left: 200px;
     margin-right: 200px; */
-    width: 70%;
+    width: 52%;
 `
 
 const Promo = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     background-color: #77f9f4;
     text-align: center;
@@ -31,15 +34,34 @@ const Promo = styled.div`
     height: 200px;
 
     h2 {
-        font-size: 42px;
+        font-size: 72px;
         color: black;
-        font-family: 'sans serif'
+        font-family: 'sans serif';
+        margin: 0px;
     }
 
     p {
         font-size: 20px;
-        color: black
+        color: black;
+        margin: 0px;
     }
+`
+
+const Image = styled.img`
+    max-width: 165px;
+    max-height: 165px;
+`
+
+const Heart = styled.img`
+    width: 148px;
+    height: 135px;
+`
+
+const Text = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 30px;
 `
 
 class Promotions extends Component {
@@ -49,13 +71,25 @@ class Promotions extends Component {
                 <h1>Promotions</h1>
                 <Body>
                     <Promo>
-                        <h2>$25 off</h2>
-                        <p> Your first Exam as a New Client</p>
+                        <div>
+                            <Image src="https://i.imgur.com/aXOaH7E.png" alt="" />
+                        </div>
+                        <br />
+                        <Text>
+                            <h2>$25 off</h2>
+                            <p> Your first Exam as a New Client</p>
+                        </Text>
                     </Promo>
-                    <br/>
+                    <br />
                     <Promo>
-                        <h2>$12 off</h2>
-                        <p>When you buy 12 doses of HeartGuard</p>
+                        <div>
+                            <Heart src="https://i.imgur.com/1zp8WO2.png"/>
+                        </div>
+                        <br/>
+                        <Text>
+                            <h2>$12 off</h2>
+                            <p>When you buy 12 doses of HeartGuard</p>
+                        </Text>
                     </Promo>
                 </Body>
 
